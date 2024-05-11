@@ -9,7 +9,7 @@
 
 
 body {
-    background-color: #303030;
+    background-color: #363e45;
 }
 
 header h1 {
@@ -21,10 +21,23 @@ header h1 {
 }
 
 header nav {
-    border: 1px solid white;
     padding: 10px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+main {
+    margin-top: 15px;
+}
+
+main .bars-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.bar {
+    background-color: #b7b816;
+    width: 4px;
+    margin-inline: 2px;
 }
