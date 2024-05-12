@@ -29,7 +29,7 @@ header nav {
 }
 
 main {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 main .bars-wrapper {
@@ -37,8 +37,20 @@ main .bars-wrapper {
     justify-content: center;
 }
 
+
 .bar {
+    position: relative;
     background: #b7b816;
-    width: 4px;
-    margin-inline: 3px;
+    width: 5px;
+    margin-inline: 4px;
+}
+
+.bar span {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
 }

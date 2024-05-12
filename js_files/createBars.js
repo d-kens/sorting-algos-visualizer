@@ -15,6 +15,10 @@ export const createBars = () => {
         div.className = 'bar';
         div.style.height = `${numbers[i] * 5}px`;
 
+        const span = document.createElement('span');
+        span.innerText = numbers[i];
+
+        div.appendChild(span)
         barsWrapper.appendChild(div)
     }
 }
