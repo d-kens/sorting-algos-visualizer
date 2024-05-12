@@ -17,6 +17,7 @@ header h1 {
     font-size: 36px;
     color: white;
     text-align: center;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -37,7 +38,7 @@ main .bars-wrapper {
 }
 
 .bar {
-    background-color: #b7b816;
+    background: #b7b816;
     width: 4px;
-    margin-inline: 2px;
+    margin-inline: 3px;
 }

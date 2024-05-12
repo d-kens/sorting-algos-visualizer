@@ -1,6 +1,4 @@
-function createBars() {
-    console.log('You clicke me');
-
+export const createBars = () => {
     let numbers = [];
 
     for (let i = 0; i < 100; i++) {
@@ -17,16 +15,6 @@ function createBars() {
         div.className = 'bar';
         div.style.height = `${numbers[i] * 5}px`;
 
-        // const span = document.createElement('span');
-        // span.textContent = numbers[i];
-        // div.appendChild(span);
-
         barsWrapper.appendChild(div)
     }
 }
-
-// Call createBars() when the page loads
-window.addEventListener('load', createBars);
-
-const newArrayButton = document.getElementById('new-array-btn');
-newArrayButton.addEventListener('click', createBars)
