@@ -9,7 +9,10 @@ export async function bubbleSort() {
             elements[j].style.background = 'red';
             elements[j+1].style.background = 'red';
 
-            await new Promise(resolve => setTimeout(resolve, 200));
+            console.log(typeof elements[j]);
+            console.log(elements[j])
+
+            await new Promise(resolve => setTimeout(resolve, 2000));
 
             const leftElementHeight = parseInt(window.getComputedStyle(elements[j]).height.match(/\d+/)[0]);
             const rightElementHeight = parseInt(window.getComputedStyle(elements[j + 1]).height.match(/\d+/)[0]);
