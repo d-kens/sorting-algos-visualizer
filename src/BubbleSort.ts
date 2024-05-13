@@ -1,5 +1,5 @@
 import { Sorter } from "./Sorter";
-
+import { getElementHeightAsNumber } from "./utils";
 
 class BubbleSort extends Sorter {
     async sort(): Promise<boolean> {
@@ -14,13 +14,9 @@ class BubbleSort extends Sorter {
 
                 await new Promise(resolve => setTimeout(resolve, 2000));
 
-                // const leftElementHeight = parseInt(window.getComputedStyle(this.elements[j]).height.match(/\d+/)[0]);
-                // const rightElementHeight = parseInt(window.getComputedStyle(this.elements[j + 1]).height.match(/\d+/)[0]);
-                const leftElementHeightMatch = window.getComputedStyle(this.elements[j]).height.match(/\d+/);
-                const rightElementHeightMatch = window.getComputedStyle(this.elements[j + 1]).height.match(/\d+/);
-
-                const leftElementHeight = leftElementHeightMatch ? parseInt(leftElementHeightMatch[0]) : 0;
-                const rightElementHeight = rightElementHeightMatch ? parseInt(rightElementHeightMatch[0]) : 0;
+                const leftElementHeight = getElementHeightAsNumber(this.elements[j]);
+                const rightElementHeight = getElementHeightAsNumber(this.elements[j + 1]);
+            
 
                 if(leftElementHeight > rightElementHeight) {
                     this.swap(this.elements[j], this.elements[j+1])

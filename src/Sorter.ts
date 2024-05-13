@@ -1,10 +1,7 @@
 export abstract class Sorter {
     isSorting: boolean = false;
-    elements: HTMLDivElement[] = [];
-
-    constructor(elements: HTMLDivElement[]) {
-        this.elements = elements;
-    }
+    
+    constructor(public elements: HTMLDivElement[]) {}
 
     abstract sort(): Promise<boolean>;
 
