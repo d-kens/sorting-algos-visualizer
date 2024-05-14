@@ -1,7 +1,7 @@
 import { Sorter } from "./Sorter";
 import { getElementHeightAsNumber } from "./utils";
 
-class BubbleSort extends Sorter {
+export class BubbleSort extends Sorter {
     async sort(): Promise<boolean> {
 
         this.isSorting = true;
