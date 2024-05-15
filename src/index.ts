@@ -1,3 +1,10 @@
+
+// import { createBars } from "./utils";
+
+// window.addEventListener('load', createBars);
+// const newArrayButton = document.getElementById('new-array-btn')!;
+// newArrayButton.addEventListener('click', createBars);
+
 // import { createBars } from "./createBars.js";
 // import { bubbleSort } from "./bubble.js";
 
@@ -47,3 +54,5 @@
 //         barsWrapper.appendChild(div)
 //     }
 // }
+
+
