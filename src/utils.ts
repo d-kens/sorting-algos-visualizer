@@ -38,28 +38,5 @@ export const renderBars = (length: number): void => {
 }
 
 
-// export const createBars = () => {
-//     let randomNumbers: number[] = []
-
-//     for (let i = 0; i < 100; i++) {
-//         let randomNumber = Math.floor(Math.random() * 101);
-//         randomNumbers.push(randomNumber)
-//     }
-
-//     let barsWrapper= document.getElementById('bars-wrapper') as HTMLDivElement;
-
-//     barsWrapper.innerHTML = ''
-
-//     for (let i = 0; i < randomNumbers.length; i++) {
-//         const div = document.createElement('div');
-//         div.className = 'bar';
-//         div.style.height = `${randomNumbers[i] * 5}px`;
-
-//         const span = document.createElement('span');
-//         span.innerText = randomNumbers[i].toString();
-//         div.appendChild(span);
-//         barsWrapper.appendChild(div);
-//     }
-// }
 
 
