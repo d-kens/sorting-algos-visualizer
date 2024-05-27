@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Sorter = void 0;
-class Sorter {
+export class Sorter {
     constructor(elements) {
         this.elements = elements;
         this.isSorting = false;
@@ -18,4 +15,3 @@ class Sorter {
         rightElement.style.height = leftElementHeight;
     }
 }
-exports.Sorter = Sorter;

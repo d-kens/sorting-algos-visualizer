@@ -19,7 +19,6 @@ export abstract class Sorter {
     
         leftElement.style.height = rightElementHeight;
         rightElement.style.height = leftElementHeight;
-    
     }   
 
 }
