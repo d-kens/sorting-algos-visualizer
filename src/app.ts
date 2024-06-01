@@ -1,4 +1,4 @@
-import { RenderBars } from "./classes/RenderTemplate";
+import { RenderBars } from "./classes/RenderTemplate.js";
 
 
 const barsContainer = document.getElementById('bars-wrapper') as HTMLDivElement
