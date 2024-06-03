@@ -1,7 +1,7 @@
 import { Sort } from "./Sort.js"
 
 export class BubbleSort extends Sort {
-    async sort(elements: HTMLDivElement[]) {
+    async sort(elements: NodeListOf<HTMLDivElement>) {
 
         for (let i = 0; i < elements.length - 1; i++) {
             for (let j = 0; j < elements.length - i - 1; j++) {

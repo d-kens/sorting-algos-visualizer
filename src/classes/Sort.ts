@@ -30,5 +30,5 @@ export abstract class Sort {
     }
 
 
-    abstract sort(elements: HTMLDivElement[]): void;
+    abstract sort(elements: NodeListOf<HTMLDivElement>): void;
 }
