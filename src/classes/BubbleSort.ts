@@ -1,5 +1,5 @@
-import { Sorter } from "./Sorter";
-import { getElementHeightAsNumber } from "./utils";
+import { Sorter } from "./Sorter.js";
+import { getElementHeightAsNumber } from "../utils.js";
 
 export class BubbleSort extends Sorter {
     async sort(): Promise<boolean> {
@@ -16,9 +16,8 @@ export class BubbleSort extends Sorter {
 
                 const leftElementHeight = getElementHeightAsNumber(this.elements[j]);
                 const rightElementHeight = getElementHeightAsNumber(this.elements[j + 1]);
-            
 
-                if(leftElementHeight > rightElementHeight) {
+                if(this.compare(leftElementHeight, rightElementHeight)) {
                     this.swap(this.elements[j], this.elements[j+1])
                 }
     

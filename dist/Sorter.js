@@ -14,4 +14,10 @@ export class Sorter {
         leftElement.style.height = rightElementHeight;
         rightElement.style.height = leftElementHeight;
     }
+    compare(leftELement, rightElement) {
+        if (leftELement < rightElement) {
+            return false;
+        }
+        return true;
+    }
 }
