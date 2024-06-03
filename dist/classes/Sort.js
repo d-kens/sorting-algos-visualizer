@@ -1,13 +1,12 @@
 export class Sort {
-    constructor(elements) {
-        this.elements = elements;
-        this.isSorting = false;
+    elementHeight(element) {
+        const computedStyle = window.getComputedStyle(element);
+        const height = computedStyle.getPropertyValue('height');
+        const indexOfPx = height.indexOf('px');
+        return indexOfPx !== -1 ? parseInt(height.substring(0, indexOfPx)) : 0;
     }
     compare(leftElement, rightElement) {
-        if (leftElement < rightElement) {
-            return false;
-        }
-        return true;
+        return this.elementHeight(leftElement) >= this.elementHeight(rightElement);
     }
     swap(leftElement, rightElement) {
         const leftElementHeight = window.getComputedStyle(leftElement).getPropertyValue('height');
