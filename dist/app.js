@@ -11,13 +11,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { RenderBars } from "./classes/RenderTemplate.js";
 import { BubbleSort } from "./classes/BubbleSort.js";
 import { SelectionSort } from "./classes/SelectionSort.js";
+import { InsertionSort } from "./classes/InsertionSort.js";
+import { QuickSort } from "./classes/QuickSort.js";
+import { MergeSort } from "./classes/MergeSort.js";
 const barsContainer = document.getElementById('bars-wrapper');
 const renderBars = new RenderBars(barsContainer);
-renderBars.render(10);
+renderBars.render(60);
 const newArrayBtn = document.querySelector('.newArray');
 newArrayBtn === null || newArrayBtn === void 0 ? void 0 : newArrayBtn.addEventListener('click', (event) => {
     console.log(event);
-    renderBars.render(10);
+    renderBars.render(60);
 });
 const barsList = document.querySelectorAll('.bar');
 const sortingBtnContainer = document.querySelector('.sortingBtns');
@@ -34,6 +37,18 @@ sortingButtons.forEach((button) => {
             case targetButton.classList.contains('selectionSort'):
                 const selectionSort = new SelectionSort();
                 yield selectionSort.sort(barsList);
+                break;
+            case targetButton.classList.contains('insertionSort'):
+                const insertionSort = new InsertionSort();
+                yield insertionSort.sort(barsList);
+                break;
+            case targetButton.classList.contains('quickSort'):
+                const quickSort = new QuickSort();
+                yield quickSort.sort(barsList);
+                break;
+            case targetButton.classList.contains('mergeSort'):
+                const mergeSort = new MergeSort();
+                yield mergeSort.sort(barsList);
                 break;
             default:
                 console.log('Unknown sort type');
