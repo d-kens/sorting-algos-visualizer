@@ -15,19 +15,32 @@ import { InsertionSort } from "./classes/InsertionSort.js";
 import { QuickSort } from "./classes/QuickSort.js";
 import { MergeSort } from "./classes/MergeSort.js";
 const barsContainer = document.getElementById('bars-wrapper');
+const newArrayBtn = document.querySelector('.newArray');
+const sortingBtnContainer = document.querySelector('.sortingBtns');
+const sortingButtons = sortingBtnContainer.querySelectorAll('.btn');
 const renderBars = new RenderBars(barsContainer);
 renderBars.render(60);
-const newArrayBtn = document.querySelector('.newArray');
 newArrayBtn === null || newArrayBtn === void 0 ? void 0 : newArrayBtn.addEventListener('click', (event) => {
     console.log(event);
     renderBars.render(60);
 });
-const barsList = document.querySelectorAll('.bar');
-const sortingBtnContainer = document.querySelector('.sortingBtns');
-const sortingButtons = sortingBtnContainer.querySelectorAll('.btn');
+// functions 
+const disableBtns = () => {
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach((button) => {
+        button.disabled = true;
+    });
+};
+const enableBtns = () => {
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach((button) => {
+        button.disabled = false;
+    });
+};
 sortingButtons.forEach((button) => {
     button.addEventListener('click', (event) => __awaiter(void 0, void 0, void 0, function* () {
         const targetButton = event.currentTarget;
+        const barsList = document.querySelectorAll('.bar');
         disableBtns();
         switch (true) {
             case targetButton.classList.contains('bubbleSort'):
@@ -56,16 +69,3 @@ sortingButtons.forEach((button) => {
         enableBtns();
     }));
 });
-// functions 
-const disableBtns = () => {
-    const buttons = document.querySelectorAll('.btn');
-    buttons.forEach((button) => {
-        button.disabled = true;
-    });
-};
-const enableBtns = () => {
-    const buttons = document.querySelectorAll('.btn');
-    buttons.forEach((button) => {
-        button.disabled = false;
-    });
-};

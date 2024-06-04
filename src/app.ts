@@ -8,25 +8,44 @@ import { MergeSort } from "./classes/MergeSort.js";
 
 
 const barsContainer = document.getElementById('bars-wrapper') as HTMLDivElement;
+const newArrayBtn = document.querySelector('.newArray');
+const sortingBtnContainer = document.querySelector('.sortingBtns')!;
+const sortingButtons: NodeListOf<HTMLButtonElement> = sortingBtnContainer.querySelectorAll('.btn');
 
 const renderBars = new RenderBars(barsContainer)
 renderBars.render(60);
 
-
-const newArrayBtn = document.querySelector('.newArray');
 newArrayBtn?.addEventListener('click', (event) => {
     console.log(event);
     renderBars.render(60);
 });
 
 
-const barsList: NodeListOf<HTMLDivElement> = document.querySelectorAll('.bar');
+// functions 
+const disableBtns = (): void => {
+    const buttons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.btn')
+    buttons.forEach((button: HTMLButtonElement) => {
+        button.disabled = true;
+    });
+}
 
-const sortingBtnContainer = document.querySelector('.sortingBtns')!;
-const sortingButtons: NodeListOf<HTMLButtonElement> = sortingBtnContainer.querySelectorAll('.btn');
+
+const enableBtns = (): void => {
+    const buttons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.btn')
+    buttons.forEach((button: HTMLButtonElement) => {
+        button.disabled = false;
+    })
+}
+
+
+
+
+
 sortingButtons.forEach((button: HTMLButtonElement) => {
     button.addEventListener('click', async (event) => {
         const targetButton = event.currentTarget as HTMLButtonElement;
+
+        const barsList: NodeListOf<HTMLDivElement> = document.querySelectorAll('.bar');
         
         disableBtns();
 
@@ -60,23 +79,5 @@ sortingButtons.forEach((button: HTMLButtonElement) => {
     })
 })
 
-
-
-
-// functions 
-const disableBtns = (): void => {
-    const buttons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.btn')
-    buttons.forEach((button: HTMLButtonElement) => {
-        button.disabled = true;
-    });
-}
-
-
-const enableBtns = (): void => {
-    const buttons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.btn')
-    buttons.forEach((button: HTMLButtonElement) => {
-        button.disabled = false;
-    })
-}
 
 
